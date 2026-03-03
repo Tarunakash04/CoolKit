@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | CoolKit</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.244.0/dist/lucide.min.js"></script>
+</head>
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar">
+    <div class="logo"><strong>CoolKit</strong></div>
+    <div class="menu">
+        <button id="logoutBtn" class="btn-logout">Logout</button>
+    </div>
+</nav>
+
+<!-- ==================== WELCOME SECTION ==================== -->
+<header class="dashboard-header">
+    <h1 id="heroUsername">Welcome, User!</h1>
+    <div class="dashboard-actions">
+        <button id="createClubBtn" class="btn-primary">Create Club</button>
+        <button id="joinClubBtn" class="btn-secondary">Join Club</button>
+    </div>
+</header>
+
+<!-- ==================== CLUBS LIST ==================== -->
+<main class="clubs-section">
+    <div id="clubsContainer" class="clubs-grid">
+        <!-- User clubs will populate here as cards -->
+    </div>
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="minimal-footer">
+    © 2026 · Crafted with precision by <strong>Tarun Akash</strong>
+</footer>
+
+<!-- ==================== SCRIPT ==================== -->
+<script type="module" src="script.js"></script>
+</body>
+</html>

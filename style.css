@@ -1,0 +1,276 @@
+/* ==================== GLOBAL STYLES ==================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb;
+    color: #1e293b;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.hidden { display: none; }
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    background: #ffffff;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.navbar .menu button {
+    background: #ef4444;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.navbar .menu button:hover {
+    background: #dc2626;
+}
+
+/* ==================== MAIN CONTENT ==================== */
+main, section, #dashboard-main {
+    flex: 1;
+    padding-top: 80px; /* space for navbar */
+    width: 100%;
+}
+
+/* ==================== HERO / LANDING ==================== */
+.landing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.hero-container {
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.hero-text {
+    max-width: 500px;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #4F46E5, #7C3AED);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 2rem;
+}
+
+/* ==================== BLOBS ==================== */
+.hero-visual {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.blob {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.7;
+    animation: blob 7s infinite;
+}
+
+.blob-1 { background: #6366f1; top: 0; left: 50px; }
+.blob-2 { background: #a78bfa; bottom: 0; right: 50px; animation-delay: 2s; }
+
+@keyframes blob {
+    0% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(30px,-50px) scale(1.1); }
+    66% { transform: translate(-20px,20px) scale(0.9); }
+    100% { transform: translate(0,0) scale(1); }
+}
+
+/* ==================== BUTTONS ==================== */
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover { transform: translateY(-1px); }
+
+.btn-primary {
+    background: #4F46E5;
+    color: white;
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.btn-primary:hover { background: #4338ca; }
+
+.btn-secondary {
+    background: white;
+    color: #4F46E5;
+    border: 1px solid #c7d2fe;
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.btn-secondary:hover { background: #eef2ff; }
+
+/* ==================== CARDS ==================== */
+.features-grid, .audience-cards, .clubs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.feature-card, .audience-card {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(14px);
+    border-radius: 28px;
+    border: 1px solid rgba(255,255,255,0.4);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.45s cubic-bezier(.22,1,.36,1),
+                box-shadow 0.45s ease,
+                background 0.45s ease;
+}
+
+.feature-card:hover, .audience-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 30px 70px rgba(79,70,229,0.15);
+    background: rgba(255,255,255,0.95);
+    z-index: 2;
+}
+
+.feature-card .feature-icon, .audience-card .card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    transition: transform 0.4s ease;
+}
+
+.feature-card:hover .feature-icon, .audience-card:hover .card-icon {
+    transform: translateY(-6px) scale(1.1);
+}
+
+.feature-card h3, .audience-card h3 {
+    font-size: 1.2rem;
+    color: #4F46E5;
+    margin-bottom: 0.8rem;
+}
+
+.feature-card h3::after, .audience-card h3::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 3px;
+    margin: 0.7rem auto 0;
+    background: linear-gradient(90deg, #4F46E5, #7C3AED);
+    transition: width 0.4s ease;
+}
+
+.feature-card:hover h3::after, .audience-card:hover h3::after { width: 60%; }
+
+.feature-card p, .audience-card p { color: #475569; line-height: 1.5; }
+
+/* ==================== DASHBOARD ==================== */
+.dashboard-header {
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+}
+
+.dashboard-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.dashboard-actions .btn-primary { background: #3b82f6; color: white; }
+.dashboard-actions .btn-primary:hover { background: #2563eb; }
+
+.dashboard-actions .btn-secondary { background: #e5e7eb; color: #111827; }
+.dashboard-actions .btn-secondary:hover { background: #d1d5db; }
+
+/* Clubs Grid */
+.clubs-grid {
+    padding: 0 1rem 3rem 1rem;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    margin-top: auto;
+    padding: 1rem 2rem;
+    text-align: center;
+    background: linear-gradient(180deg, #eef2ff, #f8fafc);
+    font-size: 0.85rem;
+    color: #64748b;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { animation: fadeIn 0.4s ease-out forwards; }
+
+.navbar + * {
+    padding-top: 100px; /* pushes the next element below navbar */
+}
